@@ -1,2 +1,17 @@
 # mini_torch
-A DL framework employed  with numpy like pytorch style; 简易版的numpy实现的pytorch风格的深度学习框架
+A DL framework employed  with numpy like pytorch style
+简易版的numpy实现的pytorch风格的动态图深度学习框架
+
+**目的：** 并非为了实现一个工业可用的深度学习框架，而是为了深入理解深度学习框架的运行机制，为了更好地使用流行的动态图框架
+
+目前只实现了一些极其简单的操作，以后有时间再补充一些操作；
+
+麻雀虽小，五脏俱全，能自动进行梯度计算，优化器可以对参数进行更新。
+
+test.py 文件中写了一个极其简单的拟合 [-1, 1] 内的 y=x^2 的一个小网络
+
+* Var.py 定义带梯度、生成该变量的操作以及生成该参数的变量的一种基础数据类型，可参考pytorch官方文档的自动梯度语义文档
+* Fn.py 中主要实现各种运算极其对应的反向梯度计算
+* Layer.py 对带参数的运算包装，将参数放在对应类中的parameters成员中
+* Module.py 包装网络层及各种不带参数的操作，形成一个网络
+* Optim.py 优化器
